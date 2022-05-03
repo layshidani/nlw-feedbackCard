@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import { CloseButton } from "./CloseButton";
-import bug from "./assets/bug.svg";
-import idea from "./assets/idea.svg";
-import thought from "./assets/thought.svg";
+import { CloseButton } from "../CloseButton";
+import bug from "../../assets/bug.svg";
+import idea from "../../assets/idea.svg";
+import thought from "../../assets/thought.svg";
 
 const feedbackTypes = {
   BUG: {
@@ -40,6 +40,7 @@ export function WidgetForm() {
         <span className="text-xl leading-6">Deixe seu feedback</span>
         <CloseButton />
       </header>
+
       <div className="flex py-8 gap-2 w-full">
         {Object.entries(feedbackTypes).map(([key, value]) => {
           return (
@@ -55,8 +56,9 @@ export function WidgetForm() {
           );
         })}
       </div>
+
       <footer className="text-xs text-neutral-400">
-        Feito com ♥ pela 
+        Feito com ♥ pela
         <a
           className="underline underline-offset-2"
           href="https://rocketseat.com.br"
