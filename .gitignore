@@ -10,7 +10,8 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -111,7 +112,7 @@ web_modules/
 .yarn-integrity
 
 # dotenv environment variable files
-.env
+
 .env.development.local
 .env.test.local
 .env.production.local
@@ -243,3 +244,29 @@ $RECYCLE.BIN/
 
 # Custom rules (everything added below won't be overriden by 'Generate .gitignore File' if you use 'Update' option)
 
+
+.vercel
+yarn-error.log/
+yarn.lock
+
+misc/**/migrations/
+vendor/
+tmp/
+dist/
+.idea
+tmp-resolvers
+package-lock.json
+flow-typed
+yarn.lock
+javascript/**/migrations/
+typescript/**/migrations/
+misc/**/migrations/
+databases/**/migrations/
+experimental/**/*.db
+.next
+.vscode/
+.nuxt
+dev.db
+
+
+# .env
