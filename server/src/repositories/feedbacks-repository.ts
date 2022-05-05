@@ -1,3 +1,4 @@
+// camada de dados
 export interface FeedbacksCreate{
   type: string;
   comment: string;

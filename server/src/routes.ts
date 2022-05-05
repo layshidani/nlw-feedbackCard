@@ -1,36 +1,26 @@
 import express from "express";
-import nodemailer from "nodemailer";
+import { NodemailerMailAdapter } from "./adapters/nodemailer/nodemailer-adapter";
 
-import { prisma } from "./prisma";
+import { PrismaFeedbacksRepository } from "./repositories/prisma/prisma-feedbacks-repository";
+import { SubmitFeedbackUseCase } from "./useCases/submit-feedback-use-case";
 
 export const routes = express.Router();
 
-const transport = nodemailer.createTransport({
-  host: "smtp.mailtrap.io",
-  port: 2525,
-  auth: {
-    user: "ed1987db7f3d41",
-    pass: "df0482222fdef7",
-  },
-});
-
 routes.post("/feedbacks", async (req, res) => {
   const { type, comment, screenshot } = req?.body;
+  const prismaFeedbacksRepository = new PrismaFeedbacksRepository();
+  const nodemailerMailAdapter = new NodemailerMailAdapter();
 
-  const feedback = await prisma.feedback.create({
-    data: {
-      type,
-      comment,
-      screenshot,
-    },
+  const submitFeedbackUseCase = new SubmitFeedbackUseCase(
+    prismaFeedbacksRepository,
+    nodemailerMailAdapter
+  );
+
+  await submitFeedbackUseCase.execute({
+    type,
+    comment,
+    screenshot,
   });
 
-  await transport.sendMail({
-    from: "Equipe FeedbackCard <peixinho@peixinho.com>",
-    to: "Lays <lays123@lays.com>",
-    subject: "Novo feedback",
-    html: [`<p>Tipo: ${type}</p>`, `<p>Comentário: ${comment}</p>`].join("\n"),
-  });
-
-  return res.status(201).json({ data: feedback });
+  return res.status(201).send();
 });
