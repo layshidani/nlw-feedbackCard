@@ -18,6 +18,21 @@ export class SubmitFeedbackUseCase {
   async execute(request: SubmitFeedbackUseCaseFeedback) {
     const { type, comment, screenshot } = request;
 
+    if (screenshot && !screenshot.startsWith('file:imgage/png;base64')) {
+      throw new Error('Formato de imagem inválido.');
+      
+    }
+
+    if (!type) {      
+      throw new Error('O tipo é obrigatório');
+      
+    }
+
+    if (!comment) {
+      throw new Error('O comentário é obrigatório');
+      
+    }
+
     // estamos usando SOLID: inversão de dependências, por isso não chamo o prisma repository diretamente aqui, para não deixá-lo acoplado aqui. Ou seja, se um dia eu quiser usar outra ferramenta diferente do prisma, não preciso alterar nada aqui. Alteraria somente o feedbacksRepository.
     await this.feedbacksRepository.create({
       type,
