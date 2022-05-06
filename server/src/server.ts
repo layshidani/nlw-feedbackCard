@@ -5,11 +5,12 @@ import { routes } from "./routes";
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "https://nlw-feedback-card.vercel.app/",
-  })
-);
+app.use(cors());
+// app.use(
+//   cors({
+//     origin: ["https://nlw-feedback-card.vercel.app/", "http://localhost:3000/"],
+//   })
+// );
 app.use(express.json());
 app.use(routes);
 
