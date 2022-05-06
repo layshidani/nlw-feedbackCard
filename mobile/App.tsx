@@ -1,11 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { View } from 'react-native';
+import { StatusBar } from "expo-status-bar";
+import { View } from "react-native";
 
-import { styles } from './styles';
-import { theme } from './src/theme';
-import { Widgets } from './src/components/Widgets';
+import AppLoading from "expo-app-loading";
+import {
+  useFonts,
+  Inter_400Regular,
+  Inter_500Medium,
+} from "@expo-google-fonts/inter";
+
+import { styles } from "./styles";
+import { theme } from "./src/theme";
+import { Widgets } from "./src/components/Widgets";
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Inter_400Regular,
+    Inter_500Medium,
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
   return (
     <View
       style={{
@@ -15,7 +31,7 @@ export default function App() {
     >
       <Widgets />
 
-      <StatusBar style='light' backgroundColor='transparent' translucent />
+      <StatusBar style="light" backgroundColor="transparent" translucent />
     </View>
   );
 }
