@@ -6,17 +6,41 @@ https://user-images.githubusercontent.com/43016358/166611595-c2a8d446-d563-4cea-
 
 ## Tecnlogias
 
-### Front-end
+**FRONT**
 
-- React
-- TailwindCss
-- Vite
-- Popover
+🚀 [React](https://pt-br.reactjs.org/)
 
-### Back-end
+✨ [Vite](https://vitejs.dev/)
 
-- NodeJS
-- Express
-- [Prisma](https://www.prisma.io/)
-- ts-node-dev
-- nodemail
+🛠 [TailwindCss](https://tailwindcss.com/)
+
+🛠 [Material UI - Popover](https://mui.com/pt/material-ui/react-popover/)
+
+**BACK**
+
+🚀 [NodeJS](https://nodejs.org/en/)
+
+✨ [Express](https://expressjs.com/pt-br/)
+
+🛠 [Prisma](https://www.prisma.io/)
+
+🛠 [MailTrap](https://mailtrap.io/)
+
+🛠 [ts-node-dev](https://github.com/wclr/ts-node-dev#readme)
+
+🛠 [Cors](https://www.npmjs.com/package/cors)
+
+🛠 [Jest](https://jestjs.io/pt-BR/)
+
+**DEPLOY**
+
+🚀 Web: [Vercel](https://vercel.com/)
+
+🚀 Backend: [Railway](https://railway.app/)
+
+**MOBILE**
+
+🚀 [React Native](https://reactnative.dev)
+
+✨ [Expo](https://expo.dev/)
+
