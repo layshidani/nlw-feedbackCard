@@ -10,7 +10,7 @@ import {
 } from "@expo-google-fonts/inter";
 
 import { theme } from "./src/theme";
-import { Widgets } from "./src/components/Widgets";
+import Widget from "./src/components/Widgets";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -29,9 +29,9 @@ export default function App() {
         backgroundColor: theme.colors.background,
       }}
     >
-      <Widgets />
-
       <StatusBar style="light" backgroundColor="transparent" translucent />
+
+      <Widget />
     </View>
   );
 }
