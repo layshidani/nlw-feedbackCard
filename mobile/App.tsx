@@ -8,7 +8,6 @@ import {
   Inter_500Medium,
 } from "@expo-google-fonts/inter";
 
-import { styles } from "./styles";
 import { theme } from "./src/theme";
 import { Widgets } from "./src/components/Widgets";
 
