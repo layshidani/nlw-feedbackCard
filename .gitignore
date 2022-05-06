@@ -269,4 +269,5 @@ experimental/**/*.db
 dev.db
 
 
-# .env
+.env
+.env.local
