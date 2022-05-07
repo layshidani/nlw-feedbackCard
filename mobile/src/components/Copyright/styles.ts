@@ -4,6 +4,7 @@ import { theme } from '../../theme';
 export const styles = StyleSheet.create({
   container: {
     alignItems: "center",
+    marginBottom: 56,
   },
   text: {
     fontSize: 12,
